@@ -16,6 +16,9 @@ public class MainClass {
 // 객체지향(추상화, 캡슐화, 상속, 다형성) -> 리팩토링 + 디자인패턴
 // 쓰레드 IO, 네트워크
 
+// 코틀린 REPL : 작은 코드 테스트해 보고 싶을 때 사용
+// Tools > 코틀린 > 코틀린 REPL
+
 fun main(args: Array<String>){
     println("Welcome to Kotlin")
     for (i in 1..8){
