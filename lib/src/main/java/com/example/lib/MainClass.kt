@@ -19,12 +19,64 @@ public class MainClass {
 // 코틀린 REPL : 작은 코드 테스트해 보고 싶을 때 사용
 // Tools > 코틀린 > 코틀린 REPL
 
+// 변수, 상수, 타입
+// 변수 선언하기 : 변수 정의 형식
+//      var a : Int = 5
+//      변수정의키워드(val, var) | 변수 이름 | 타입정의 | 대입연산자 | 대입값
+
+
 fun main(args: Array<String>){
+    example04()
+
+//    example01()
+//    example00()
+//    example02()
+//    example03()
+}
+
+private fun example04() {
+    val f : Short = 200
+    val b = f.toByte()
+    println(b)
+}
+
+
+// 사칙연산
+private fun example03() {
+    println(5 + 5)
+    println(10 - 2)
+    println(3 * 2)
+    println(7 / 2)
+    println(7 % 2)
+    println(7 / 2.0)
+}
+
+// 타입
+private fun example02() {
+    // 논리형
+    val b1 = true
+    val b2 = false
+    println(b1)
+
+    // 문자형
+    val c = 'A'
+
+    // 정수형
+    val num1: Byte = 127 // Byte -> 최대 127
+    val num2: Short = 20 // Short -> 2byte
+    val num3: Int = 30 // Int -> 4byte (Int: 디폴트값)
+    val num4: Long = 40 //Long -> 8byte
+
+    // 실수형
+    val num5 = 10.3 // double 형 (8byte)
+    val num6 = 10.3.toFloat() // float 형 (4byte)
+}
+
+private fun example01() {
     println("Welcome to Kotlin")
-    for (i in 1..8){
+    for (i in 1..8) {
         println("i = $i")
     }
-    example00()
 }
 
 private fun example00() {
