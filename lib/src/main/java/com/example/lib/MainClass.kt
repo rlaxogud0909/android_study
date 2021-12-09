@@ -1,6 +1,9 @@
 package com.example.lib
 
-class MainClass {
+public class MainClass {
+    public fun printTest(){
+        println("test")
+    }
 }
 
 // JVM : 코틀린 소스코드 -> 바이트코드 변환 -> JVM 이 바이트코드 실행 -> 콘솔 출력
