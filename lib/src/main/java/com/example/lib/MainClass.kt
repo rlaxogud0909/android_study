@@ -35,9 +35,27 @@ fun main(args: Array<String>){
 //    example04()
 //    example05()
 //    example06()
-    example07()
-    example08()
+//    example07()
+//    example08()
+    example09()
 }
+
+// null 가능 타입과 let 함수
+// null 가능 타입의 객체에 대해 호출하면 null 가능 타입을 it 라는 null 불가능 변수로 변환
+private fun example09() {
+    val firstNumber = 10
+    val secondNumber: Int? = 20
+
+//    if (secondNumber != null) {
+//        val result = firstNumber.times(secondNumber)
+//    }
+
+    secondNumber?.let {
+        val result = firstNumber.times(it)
+        println(result)
+    }
+}
+
 
 // null 가능 변수는 함수 호출이나 참조 시에도 보통 방법으로 사용할 수 없다
 // null 이 아니라는 것을 함수 호출 전에 검사하는 코드가 필요
