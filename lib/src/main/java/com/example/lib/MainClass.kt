@@ -26,13 +26,24 @@ public class MainClass {
 
 
 fun main(args: Array<String>){
-    example05()
+    example06()
 
 //    example01()
 //    example00()
 //    example02()
 //    example03()
 //    example04()
+//    example05()
+}
+
+// null 불가능 타입에 null 가능 타입을 넣으면 컴파일 에러
+// null 여부 확인 필요
+private fun example06() {
+    var username: String? = null
+
+    if (username != null) {
+        println(username.length)
+    }
 }
 
 private fun example05() {
