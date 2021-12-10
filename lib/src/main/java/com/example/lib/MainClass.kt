@@ -26,7 +26,7 @@ public class MainClass {
 
 
 fun main(args: Array<String>){
-    example06()
+
 
 //    example01()
 //    example00()
@@ -34,6 +34,24 @@ fun main(args: Array<String>){
 //    example03()
 //    example04()
 //    example05()
+//    example06()
+    example07()
+    example08()
+}
+
+// null 가능 변수는 함수 호출이나 참조 시에도 보통 방법으로 사용할 수 없다
+// null 이 아니라는 것을 함수 호출 전에 검사하는 코드가 필요
+// 또는 안전호출 연산자(?)를 사용
+private fun example08() {
+    var username: String? = null
+    val length = username?.length
+}
+
+// Not-null assertion !!
+// null 가능 타입의 모든 제약을 받지 않으나 런타임 시에 null 포인터 예외 발생 가능
+private fun example07() {
+    var username: String? = null
+    val length = username!!.length
 }
 
 // null 불가능 타입에 null 가능 타입을 넣으면 컴파일 에러
