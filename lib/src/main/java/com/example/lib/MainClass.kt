@@ -26,13 +26,33 @@ public class MainClass {
 
 
 fun main(args: Array<String>){
-    example04()
+    example05()
 
 //    example01()
 //    example00()
 //    example02()
 //    example03()
+//    example04()
 }
+
+private fun example05() {
+    val userCount: Int = 10   // Int 타입 어노테이션 지정
+    val singlStrength = 2.231 // Double 타입 추론
+    val companyName = "OZ10"  // String 타입 추론
+
+    // 타입 어노테이션을 지정하여 불변 변수를 선언할 때는 초깃값을 나중에 지정이 가능
+    val bookTitle: String
+    val iosBookType = false
+
+    if (iosBookType) {
+        bookTitle = "iOS App"
+    } else {
+        bookTitle = "Android App"
+    }
+    println(bookTitle)
+//    bookTitle = "iOS App"
+}
+
 
 private fun example04() {
     val f : Short = 200
