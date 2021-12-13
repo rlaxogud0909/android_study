@@ -3,11 +3,11 @@ package com.example.lib
 fun main(args: Array<String>) {
     println("Quizzes")
 
-//    println("윤년 맞추기..")
-//    checkLeapYear(1700)  // 1700 X
-//
-//    println("369게임..")
-//    game369()
+    println("윤년 맞추기..")
+    checkLeapYear(1700)  // 1700 X
+
+    println("369게임..")
+    game369()
     game369Ex(99)
 
 }
