@@ -20,20 +20,11 @@ package com.example.lib
 //            보조생성자에 선언된 변수는 클래스 내부 속성으로 추가해야 한다
 //            보조생성자에서 기본생성자 속성을 초기화하기 위해 this 키워드를 사용해 기본생성자를 호출한다
 
-class BankAccount {
+class BankAccount (val accountNumber: Int, var accountBalance: Double) {
 
-    var accountBlance: Double = 0.0  // 잔액
-    var accountNumber: Int = 0      // 은행계좌번호
     var name: String = ""       // 고객이름
 
-    constructor(number: Int, balance: Double) {
-        this.accountNumber = number
-        accountBlance = balance
-    }
-
-    constructor(number: Int, balance: Double, name: String) {
-        this.accountNumber = number
-        this.accountBlance = balance
+    constructor(number: Int, balance: Double, name: String) : this(number, balance){
         this.name = name
     }
 
@@ -42,7 +33,7 @@ class BankAccount {
     fun displayBlance() {
         println("Number $accountNumber")
         println("Name is $name")
-        println("Currnet blance is $accountBlance")
+        println("Currnet blance is $accountBalance")
     }
 }
 
