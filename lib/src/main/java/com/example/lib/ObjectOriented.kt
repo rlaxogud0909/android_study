@@ -20,8 +20,16 @@ package com.example.lib
 //            보조생성자에 선언된 변수는 클래스 내부 속성으로 추가해야 한다
 //            보조생성자에서 기본생성자 속성을 초기화하기 위해 this 키워드를 사용해 기본생성자를 호출한다
 
-class BankAccount (val accountNumber: Int, var accountBalance: Double) {
+// 초기화 블록 initializer block
+//   기본생성자는 실행 코드를 포함할 수 없으므로
+//   기본생성자 다음에 자동 실행
+//   (단, 기본 생성자가 없고 보조 생성자만 있을 때는 실행되지 않는다)
 
+class BankAccount (val accountNumber: Int, var accountBalance: Double) {
+    init {
+        // 초기화 하는 코드
+        accountBalance = 0.0
+    }
     var name: String = ""       // 고객이름
 
     constructor(number: Int, balance: Double, name: String) : this(number, balance){
