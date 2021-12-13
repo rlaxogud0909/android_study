@@ -25,12 +25,25 @@ package com.example.lib
 //   기본생성자 다음에 자동 실행
 //   (단, 기본 생성자가 없고 보조 생성자만 있을 때는 실행되지 않는다)
 
+// 클래스 커스텀 접근자
+//   속성 기본 접근자 accessor : 속성값을 가져오거나 설정하는 기본 제공 접근자
+//   속성 커스텀 접근자 : 속성이 반환되거나 설정되기 전에 원하는 로직을 실행
+//     각 속성에 게터 getter 나 세터 setter 를 작성하여 구현
+//     연산속성 computed property : 클래스의 다른 속성값을 사용하여 자신의 값을 산출하는 속성
+//     세터를 선언하면 속성값을 변경한다는 것이므로 해당 속성을 val 이 아닌 var 로 선언한다
+
+
 class BankAccount (val accountNumber: Int, var accountBalance: Double) {
     init {
         // 초기화 하는 코드
         accountBalance = 0.0
     }
     var name: String = ""       // 고객이름
+    val fees: Double = 25.00    // 은행 수수료 공제금액
+
+    var balanceLessFees: Double
+        get() { return accountBalance - fees}
+        set(value) { accountBalance = value - fees}
 
     constructor(number: Int, balance: Double, name: String) : this(number, balance){
         this.name = name
@@ -68,4 +81,8 @@ fun main(args: Array<String>) {
     account1.accountBalance = 1000.0
     val balance1 = account1.accountBalance
     account1.displayBlance()
+
+    account1.balanceLessFees = 200.0
+    account1.displayBlance()
+
 }
