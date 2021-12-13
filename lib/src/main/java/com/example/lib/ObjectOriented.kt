@@ -105,5 +105,35 @@ fun main(args: Array<String>) {
     account1.balanceLessFees = 200.0
     account1.displayBlance()
 
+    // 동반객체
+    println("compaion object")
+    println( MyClass.counter )
+    MyClass.counterUp()
+    println( MyClass.counter )
+
+    val instanceA = MyClass()
+    instanceA.showCount()
+
+    val instanceB = MyClass()
+    MyClass.counterUp()
+    instanceB.showCount()
+
 }
 
+// 동반 객체 compaion object
+//   자신을 포함하는 클래스의 모든 인스턴스가 공유하는 속성과 함수를 포함
+//   인스턴스를 생성하지 않고 클래스 이름으로도 사용이 가능
+//   동반 객체는 하나만 생성되기 때문에 동반 객체를 포함하는 클래스의 모든 인스턴스는 같은 동반 객체를 공유한다
+class MyClass {
+    fun showCount() {
+        println("counter = $counter")
+    }
+
+    companion object {
+        var counter = 0
+
+        fun counterUp() {
+            counter++;
+        }
+    }
+}
