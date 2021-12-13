@@ -50,6 +50,14 @@ class BankAccount (val accountNumber: Int, var accountBalance: Double) {
 //   val account1: BankAccount = BankAccount()
 //   val account1 = BankAccount()  // 변수의 타입을 코틀린 컴파일러가 추론, 생략 가능
 //   클래스의 인스턴스가 생성되어 변수를 사용(참조)할 수 있다
+
+// 클래스 함수 호출과 속성 사용
+//   클래스인스턴스.속성명
+//   클래스인스턴스.함수명()
+//   클래스 인스턴스 참조(변수 등)에 점(.)을 붙이고 그 다음에 함수나 속성을 지정
+
+
+
 fun main(args: Array<String>) {
     val account1: BankAccount = BankAccount(12345, 100.0)
     val account2 = BankAccount(12346, 100.0)  // 변수의 타입을 코틀린 컴파일러가 추론, 생략 가
@@ -57,4 +65,7 @@ fun main(args: Array<String>) {
     account2.displayBlance()
     account3.displayBlance()
 
+    account1.accountBalance = 1000.0
+    val balance1 = account1.accountBalance
+    account1.displayBlance()
 }
