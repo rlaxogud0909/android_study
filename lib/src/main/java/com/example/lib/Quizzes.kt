@@ -3,11 +3,12 @@ package com.example.lib
 fun main(args: Array<String>) {
     println("Quizzes")
 
-    println("윤년 맞추기..")
-    checkLeapYear(1700)  // 1700 X
-
-    println("369게임..")
-    game369()
+//    println("윤년 맞추기..")
+//    checkLeapYear(1700)  // 1700 X
+//
+//    println("369게임..")
+//    game369()
+    game369Ex(99)
 
 }
 
@@ -30,6 +31,19 @@ fun game369() {
         println()
     }
 
+}
+
+fun game369Ex(cnt: Int) {
+    for (cnt in 0..cnt) {
+        println(cnt.toString() + is369(cnt))
+    }
+}
+
+fun is369(cnt: Int): String {
+    val a = cnt / 10
+    val b = cnt % 10
+    val str = if (b % 3 == 0 && b != 0) "*" else ""
+    return if (a == 0) str else str + is369(a)
 }
 
 fun checkLeapYear(year: Int) {
