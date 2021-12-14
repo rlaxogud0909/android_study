@@ -8,15 +8,29 @@ package com.example.lib
 //   추상클래스 abstract class : 인터페이스와 클래스의 특성을 혼합한 클래스 타입
 //     서브 클래스를 가질 수 있고 생성자도 정의할 수 있다
 
-open class Ant {
-    var name = "Ant"
+// 인터페이스 정의와 구현
+//   interface  키워드를 사용
+//	 속성은 선언만 하고 초기화하는 코드가 없고,
+//   함수는 헤더만 선언하고 구현이 없는 추상 함수를 사용한다
+interface IAnt {
+    var name: String
+    fun place(): String
+    fun show(): String
+}
+
+open class Ant: IAnt {
+    override var name = "Ant"
 
     override fun toString(): String {
         return "이름 : $name"
     }
 
-    open fun place(): String {
+    override fun place(): String {
         return name + "는 동굴에서 산다."
+    }
+
+    override fun show(): String {
+        TODO("Not yet implemented")
     }
 
 
@@ -28,19 +42,61 @@ class WaterAnt : Ant() {
         return name + "는 water에서 산다."
     }
 
-    fun show(): String {
+    override fun show(): String {
         return "water 주변"
     }
 
 }
 
+class FireAnt(override  var name: String) : IAnt {
+    override fun place(): String {
+        return name + "는 산에서 산다."
+    }
+
+    override fun show(): String {
+        return "산 주변"
+    }
+
+}
+
 fun main(args: Array<String>){
-    val ant: Ant = Ant()
+//    val ant: Ant = Ant()
+//    println( ant.toString() )
+//    println( ant.place() )
+//
+//    val want: WaterAnt = WaterAnt()
+//    println( want.toString() )
+//    println( want.place() )
+//    println( want.show() )
+//
+//    val fant: FireAnt = FireAnt("FireAnt")
+//    println( fant.toString() )
+//    println( fant.place() )
+//    println( fant.show() )
+
+    val ant: IAnt = Ant()
     println( ant.toString() )
     println( ant.place() )
 
-    val want: WaterAnt = WaterAnt()
+    val want: IAnt = WaterAnt()
     println( want.toString() )
     println( want.place() )
     println( want.show() )
+
+    val fant: IAnt = FireAnt("FireAnt")
+    println( fant.toString() )
+    println( fant.place() )
+    println( fant.show() )
+
+    displayAnt( Ant() )
+
+    displayAnt( WaterAnt() )
+
+    displayAnt( FireAnt("FireAnt") )
+}
+
+fun displayAnt(ant: IAnt) {
+    println( ant.toString() )
+    println( ant.place() )
+    println( ant.show() )
 }
