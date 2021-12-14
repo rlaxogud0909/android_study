@@ -18,11 +18,17 @@ interface IAnt {
     fun show(): String
 }
 
-open class Ant: IAnt {
+// 추상클래스 정의와 구현
+//   abstract 키워드를 class 키워드 앞에 사용
+//   인터페이스와 비슷하게 헤더만 정의된 추상 함수와 속성을 갖는다
+//   구현 코드가 있는 일반 함수를 가질 수 있다
+//   인스턴스를 생성할 수 없다
+abstract class Ant : IAnt {
+
     override var name = "Ant"
 
     override fun toString(): String {
-        return "이름 : $name"
+        return "이름: $name " + place() + show()
     }
 
     override fun place(): String {
@@ -59,6 +65,8 @@ class FireAnt(override  var name: String) : IAnt {
 
 }
 
+
+
 fun main(args: Array<String>){
 //    val ant: Ant = Ant()
 //    println( ant.toString() )
@@ -74,21 +82,21 @@ fun main(args: Array<String>){
 //    println( fant.place() )
 //    println( fant.show() )
 
-    val ant: IAnt = Ant()
-    println( ant.toString() )
-    println( ant.place() )
+//    val ant: IAnt = Ant()
+//    println( ant.toString() )
+//    println( ant.place() )
+//
+//    val want: IAnt = WaterAnt()
+//    println( want.toString() )
+//    println( want.place() )
+//    println( want.show() )
+//
+//    val fant: IAnt = FireAnt("FireAnt")
+//    println( fant.toString() )
+//    println( fant.place() )
+//    println( fant.show() )
 
-    val want: IAnt = WaterAnt()
-    println( want.toString() )
-    println( want.place() )
-    println( want.show() )
-
-    val fant: IAnt = FireAnt("FireAnt")
-    println( fant.toString() )
-    println( fant.place() )
-    println( fant.show() )
-
-    displayAnt( Ant() )
+//    displayAnt( Ant() )
 
     displayAnt( WaterAnt() )
 
